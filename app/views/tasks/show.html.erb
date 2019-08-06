@@ -1,0 +1,17 @@
+<h1><%= @task.title %></h1>
+<div class = 'd-flex'>
+  <% if @task.completed == false %>
+    <i class="far fa-check-square mx-3"></i>
+  <% else %>
+    <i class="fas fa-check-square mx-3"></i>
+  <% end %>
+
+  <h3><%= @task.details %></h3>
+</div>
+<p>
+  <%= link_to 'Edit', edit_task_path(@task) %>
+</p>
+
+<p>
+  <%= link_to 'Back to Tasks', '/tasks' %>
+</p>

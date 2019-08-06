@@ -1,0 +1,15 @@
+  <h1>Tasks!</h1>
+  <% @tasks.each do |task| %>
+    <div class = "d-flex">
+      <% if task.completed == false %>
+        <i class="far fa-check-square mx-3"></i>
+        <% else %>
+        <i class="fas fa-check-square mx-3"></i>
+      <% end %>
+      <p><%= link_to task.title, task_path(task) %></p>
+      <p class = 'mx-3'><%= link_to 'Remove', task_path(task), method: :delete,
+      data: { confirm: "Are you sure?" } %></p>
+    </div>
+  <% end %>
+
+  <%= link_to 'NEW', new_task_path %>
